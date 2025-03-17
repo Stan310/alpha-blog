@@ -23,7 +23,7 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
-  config.seret_key_base = 6cb39c444e47b3d2c3b0f32902bf3e89ff28e7c387ada23cd69557859ca16729ee01b80ccc3878e83e8ab972f49bce9e7faa548fff8b1e47187637fe23b73bd3
+  config.seret_key_base = "6cb39c444e47b3d2c3b0f32902bf3e89ff28e7c387ada23cd69557859ca16729ee01b80ccc3878e83e8ab972f49bce9e7faa548fff8b1e47187637fe23b73bd3"
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   config.assume_ssl = true
 
