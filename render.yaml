@@ -1,20 +1,19 @@
-databases:
-  - name: alpha_blog
-    databaseName: alpha_blog
-    user: alpha_blog
-    plan: free
-
+# Exported from Render on 2025-03-17T22:41:44Z
 services:
-  - type: web
-    plan: free
-    name: alpha_blog
-    env: ruby
-    buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: alpha_blog
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
+- type: web
+  name: alpha_blog-qhap
+  runtime: ruby
+  repo: https://github.com/Stan310/alpha-blog
+  branch: alter
+  plan: free
+  envVars:
+  - key: SECRET_KEY_BASE
+    sync: false
+  - key: RAILS_MASTER_KEY
+    sync: false
+  - key: DATABASE_URL
+    sync: false
+  region: oregon
+  buildCommand: ./bin/render-build.sh
+  startCommand: bundle exec puma -C config/puma.rb
+version: "1"
