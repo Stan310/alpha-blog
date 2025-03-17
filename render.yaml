@@ -1,20 +1,20 @@
 databases:
-  - name: alpha-blog
-    databaseName: alpha-blog
-    user: alpha-blog
+  - name: alpha_blog
+    databaseName: alpha_blog
+    user: alpha_blog
     plan: free
 
 services:
   - type: web
     plan: free
-    name: alpha-blog
+    name: alpha_blog
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: alpha-blog
+          name: alpha_blog
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
